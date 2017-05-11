@@ -6,7 +6,7 @@ exec ros -Q -- $0 "$@"
 (progn ;;init forms
   (ros:ensure-asdf)
   (push #p"./" asdf:*central-registry*)
-  (require :btckun)
+  (ql:quickload :btckun)
   ;;#+quicklisp (ql:quickload '() :silent t)
   )
 

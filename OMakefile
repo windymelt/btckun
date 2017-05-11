@@ -1,7 +1,14 @@
-.PHONY: run installdeps
+.PHONY: run installdeps docker-build
+
+tag() =
+	return $(shell git describe --candidates=0 --tags)
 
 run: installdeps
 	qlot exec ros localup.ros
 
 installdeps: qlfile qlfile.lock
 	qlot install
+
+docker-build:
+#$	$(tag)
+	docker build --force-rm=true -t "btckun:$(tag)" .
