@@ -1,0 +1,3 @@
+ql slack-client :latest
+ql dexador :latest
+ql cl-json :latest

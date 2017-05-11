@@ -1,0 +1,22 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#| You should install libuv.
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  (push #p"./" asdf:*central-registry*)
+  (require :btckun)
+  ;;#+quicklisp (ql:quickload '() :silent t)
+  )
+
+(defpackage :ros.script.btckunclient.3703234717
+  (:use :cl)
+  (:use :asdf))
+(in-package :ros.script.btckunclient.3703234717)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (format t "Starting btckun...~&")
+  (btckun:bootstrap))
+;;; vim: set ft=lisp lisp:

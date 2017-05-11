@@ -15,7 +15,7 @@
   :version "0.1"
   :author ""
   :license ""
-  :depends-on ()
+  :depends-on ("cl-json" "slack-client" "dexador")
   :components ((:module "src"
                 :components
                 ((:file "btckun"))))
