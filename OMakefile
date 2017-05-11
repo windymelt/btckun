@@ -1,0 +1,7 @@
+.PHONY: run installdeps
+
+run: installdeps
+	qlot exec ros localup.ros
+
+installdeps: qlfile qlfile.lock
+	qlot install
